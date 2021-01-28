@@ -1,0 +1,1 @@
+export const urlApi = 'https://www.mobile.de/hiring-challenge.json'
