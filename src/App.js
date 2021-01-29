@@ -5,11 +5,11 @@ import ProductDetail from './COMPONENT/ProductDetail'
 
 const App = () => {
   return (
-    <div className="m-5">
+    <div>
         <Switch>
           <Route exact path="/" component = {ProductDetail}/>
-          <Route exact path="/img-detail/" component={ImgDetail}/>
         </Switch>
+        <Route exact path="/img-detail/" component={ImgDetail}/>
     </div>
   );
 };

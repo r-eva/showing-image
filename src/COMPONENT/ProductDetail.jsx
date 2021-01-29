@@ -1,20 +1,21 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios'
-import {Image, Col, Card, Container, Row} from 'react-bootstrap'
+import {Col, Card, Spinner, Row} from 'react-bootstrap'
 import {urlApi} from '../HELPERS/database'
 import {Link} from 'react-router-dom'
+import LocalData from '../HELPERS/data.json'
 
 function ProductDetail () {
-    const [data, setData] = useState({images: []})
+    const [data, setData] = useState('')
 
     useEffect(()=> {
         axios.get(urlApi)
         .then((res)=>{
-            console.log(res.data)
             setData(res.data)
         })
         .catch((err) => {
             console.log(err)
+            setData(LocalData)
         })
     }, [])
 
@@ -26,11 +27,12 @@ function ProductDetail () {
                         {
                             pathname: "/img-detail",
                             state: {
-                                uri: val.uri
+                                uri: val.uri,
+                                title: data.title
                             }
                         }
                     }>
-                        <Image src={`https://${val.uri}_2.jpg`}/>
+                        <Card.Img src={`https://${val.uri}_2.jpg`}/>
                     </Link>
                 </Col>
             )
@@ -38,16 +40,41 @@ function ProductDetail () {
         return jsx
     }
 
-    return (
-        <Container>
-             <Card>
-                <Card.Body>
+    if (data === '') {
+        return <Spinner animation="border" />
+    }
+
+    return (       
+        <div className="m-md-5">
+
+            {/* MOBILE DEVICE */}
+
+            <div className="d-sm-none">
+                <Card>
+                    
+                    {renderProductDetail()}
+                    <Card.Body>
+                        <Card.Title className="font-weight-bold">
+                            <p>{data.title}<br/>{data.price.gross}</p>
+                        </Card.Title>
+                        <Row>
+                            
+                        </Row>
+                    </Card.Body>
+                </Card> 
+            </div>
+
+            {/* TABLET AND DESKTOP */}
+            <div className="d-none d-md-block">
+                <Card>
                     <Row>
                         {renderProductDetail()}
                     </Row>
-                </Card.Body>
-            </Card>
-        </Container>
+                </Card>
+            </div>
+
+
+        </div>
        
     );
 }
