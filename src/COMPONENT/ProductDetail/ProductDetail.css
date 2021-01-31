@@ -1,0 +1,73 @@
+
+@media (min-width: 992px) {
+    .card-img {
+        height: 700px;
+    }
+    .card-technische{
+        height: 700px;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+}
+
+@media only screen and (min-width: 575.99px) and (max-width: 991px) {
+    .img-tablet_container {
+        display: flex;
+        flex-direction: column
+    }
+    .img-tablet_wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .card-img {
+        height: 1270px;
+    }
+    .card-technische{
+        height: 1270px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    p {
+        font-size: small;
+    }
+    .img-thumbnail {
+        width: 100%;
+    }
+}
+
+/* Iphone 5 */
+@media screen and (device-aspect-ratio: 40/71) {
+    .card-header {
+        padding: 0.25rem 0.41rem;
+    }
+    .card-body {
+        padding: 0.41rem;
+    }
+    .card-footer {
+        padding: 0.25rem 0.41rem;
+    }
+}
+
+/* Galaxy fold and Smaller than Iphone 5 */
+
+@media (max-width: 300px){
+    .card-header {
+        padding: 0.25rem 0.41rem;
+        font-size: 14px;
+    }
+    .card-body {
+        padding: 0.41rem;
+        font-size: 14px;
+    }
+    .card-footer {
+        padding: 0.25rem 0.41rem;
+        font-size: 14px;
+    }
+    p {
+        font-size: 11px;
+    }
+}
+
+

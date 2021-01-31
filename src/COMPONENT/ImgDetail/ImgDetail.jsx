@@ -16,7 +16,7 @@
 import React from 'react';
 import {useLocation, useHistory} from 'react-router'
 import {Image} from 'react-bootstrap'
-import Modal from './Modal'
+import Modal from '../Modal/Modal'
 import './ImgDetail.css'
 
 function ImgDetail() {

@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios'
-import {Col, Card, Spinner, Image} from 'react-bootstrap'
-import {urlApi} from '../HELPERS/database'
+import {Card, Spinner, Image} from 'react-bootstrap'
+import {urlApi} from '../../HELPERS/database'
 import {Link} from 'react-router-dom'
-import LocalData from '../HELPERS/data.json'
+import LocalData from '../../HELPERS/data.json'
 import './ProductDetail.css'
 
 function ProductDetail () {
@@ -44,7 +44,7 @@ function ProductDetail () {
             return (
                     <div className="row" key={idx}>
                         <div className="col-6 font-weight-bold"><p>{val.label}</p></div>
-                        <div className="col-6">
+                        <div className="col-6 ">
                             <p>{val.value}</p>
                         </div>
                     </div>
@@ -57,7 +57,7 @@ function ProductDetail () {
         var jsx = data.features.map((val, idx) => {
             return(
                 <div className="col-6" key={idx}>
-                    <p><span className="font-weight-bold">&#x2713;</span> {val}</p>
+                    <p className="galaxy-fold-features"><span className="font-weight-bold">&#x2713;</span> {val}</p>
                 </div>
             )
         })
@@ -72,7 +72,7 @@ function ProductDetail () {
     return (       
         <div className="m-md-5">
             <div className="row">
-                <div className="col-12 col-sm-7">
+                <div className="col-12 col-sm-7 col-md-5 col-lg-7 mt-3 mt-md-0">
                     <Card className="card-img">
                         <Card.Body>
                             <div className="img-tablet_container">
@@ -84,7 +84,7 @@ function ProductDetail () {
                         </Card.Footer>
                     </Card>
                 </div>
-                <div className="col-12 col-sm-5 mt-3 mt-md-0">
+                <div className="col-12 col-sm-5 col-md-7 col-lg-5 mt-3 mt-md-0">
                     <Card className="card-technische">
                         <Card.Header className="font-weight-bold">Technische Daten</Card.Header>
                         <Card.Body>
