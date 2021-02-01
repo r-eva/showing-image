@@ -9,6 +9,7 @@ import './ProductDetail.css'
 function ProductDetail () {
     const [data, setData] = useState('')
 
+    /// GET DATA FROM AXIOS OR LOCALDATA
     useEffect(()=> {
         axios.get(urlApi)
         .then((res)=>{
@@ -20,6 +21,7 @@ function ProductDetail () {
         })
     }, [])
 
+    /// SHOWING IMAGE
     const renderProductDetail = () => {
         var jsx = data.images.map((val, idx) => {
             return (
@@ -32,13 +34,14 @@ function ProductDetail () {
                         }
                     }
                 } className="img-tablet_wrapper">
-                    <Image src={`https://${val.uri}_2.jpg`} className={`img-thumbnail`}/>
+                    <Image src={`https://${val.uri}_2.jpg`} className="img-thumbnail m-2"/>
                 </Link>
             )
         })
         return jsx
     }
 
+    /// SHOWING DATA CLASSIFICATION AND FEATURES
     const renderClassification = () => {
         var jsx = data.attributes.map((val, idx) => {
             return (
@@ -64,8 +67,9 @@ function ProductDetail () {
         return jsx
     }
 
+    /// SHOWING SPINNER BEFORE GETTING DATA
     if (data === '') {
-        return <Spinner animation="border" />
+        return <Spinner animation="border">Loading..</Spinner>
     }
 
 
@@ -74,7 +78,7 @@ function ProductDetail () {
             <div className="row">
                 <div className="col-12 col-sm-7 col-md-5 col-lg-7 mt-3 mt-md-0">
                     <Card className="card-img">
-                        <Card.Body>
+                        <Card.Body className="d-flex align-items-center">
                             <div className="img-tablet_container">
                                 {renderProductDetail()}
                             </div>

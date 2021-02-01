@@ -10,8 +10,8 @@ const App = () => {
         <BrowserRouter>
         <Switch>
           <Route exact path="/" component = {ProductDetail}/>
-          <Route exact path="/img-detail/" component={ImgDetail}/>
         </Switch>
+        <Route exact path="/img-detail/" component={ImgDetail}/>
         </BrowserRouter>
     </div>
   );

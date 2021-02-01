@@ -1,19 +1,27 @@
-
+/* IPAD PRO AND LARGER DEVICE */
 @media (min-width: 992px) {
     .card-img {
-        height: 700px;
+        height: 750px;
     }
     .card-technische{
-        height: 700px;
+        height: 750px;
         overflow: hidden;
         overflow-y: scroll;
     }
+    .img-tablet_container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
+/* MEDIUM DEVICE AND IPAD */
 @media only screen and (min-width: 575.99px) and (max-width: 991px) {
     .img-tablet_container {
         display: flex;
-        flex-direction: column
+        flex-direction: column;
+        flex-grow: 1;
     }
     .img-tablet_wrapper {
         display: flex;
@@ -28,6 +36,7 @@
     }
 }
 
+/* SMALL DEVICE */
 @media (max-width: 575.98px) {
     p {
         font-size: small;
