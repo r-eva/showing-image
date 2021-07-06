@@ -1,8 +1,3 @@
-# EBAY CODE CHALLENGE
-## This repository contains solution to code challenge by eBay Classifieds Group
-### Author: Regina Eva Dewi Mandasari
-
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Please install all dependencies by running:
